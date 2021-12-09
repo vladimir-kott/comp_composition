@@ -3,7 +3,7 @@ import React, {useState} from "react"
 const Counter = (props) => {
     /*console.log(props)*/
 
-    let [value, setValue] = useState(props.value)
+    const {value} = props
 
 
     const formatCount = () => {
@@ -16,9 +16,17 @@ const Counter = (props) => {
         return classes
     }
 
-    const hendleIncrement = () => {setValue((prevState) => prevState + 1)}
+    const hendleIncrement = () => {
+        /*console.log('+')*/
+        //setValue((prevState) => prevState + 1)
+        props.onIncrement(props.id)
+    }
 
-    const hendleDecrement = () => {setValue((prevState) => prevState - 1)}
+    const hendleDecrement = () => {
+        /*console.log('-')*/
+        //setValue((prevState) => prevState - 1)
+        props.onDecrement(props.id)
+    }
 
     return (
     <div> 
