@@ -1,10 +1,7 @@
-import React, {useState} from "react"
+import React from "react"
 
 const Counter = (props) => {
-    /*console.log(props)*/
-
     const {value} = props
-
 
     const formatCount = () => {
         return value === 0 ? 'empty' : value
@@ -17,14 +14,10 @@ const Counter = (props) => {
     }
 
     const hendleIncrement = () => {
-        /*console.log('+')*/
-        //setValue((prevState) => prevState + 1)
         props.onIncrement(props.id)
     }
 
     const hendleDecrement = () => {
-        /*console.log('-')*/
-        //setValue((prevState) => prevState - 1)
         props.onDecrement(props.id)
     }
 
